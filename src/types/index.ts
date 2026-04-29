@@ -8,3 +8,13 @@ export interface GithubUser {
   followers: number;
 }
 
+export interface Todo {
+  id: string;
+  title: string;
+  description: string;
+  timeRange: string;
+  completed: boolean;
+  color: string;
+}
+
+export type TabType = "active" | "completed";
