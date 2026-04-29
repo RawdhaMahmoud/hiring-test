@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, type ComponentType } from "react";
 import { BiPlus, BiSearch } from "react-icons/bi";
 import useTodos from "../../hooks/useTodos";
 import TodoFilters from "./TodoFilters";
@@ -29,6 +29,16 @@ const TodoList = () => {
     setTimeout(() => addInputRef.current?.focus(), 100);
   };
 
+  
+  interface StatsProps {
+    total: number;
+    completed: number;
+    filteredCount: number;
+    isSearching: boolean;
+  }
+
+  const Stats: ComponentType<StatsProps> = TodoStats;
+
   return (
     <div className="task-board">
       <div className="list-toolbar">
@@ -52,7 +62,7 @@ const TodoList = () => {
 
       <TodoFilters activeTab={activeTab} onTabChange={setActiveTab} />
 
-      <TodoStats
+      <Stats
         total={totalCount}
         completed={completedCount}
         filteredCount={filteredTodos.length}
