@@ -66,9 +66,7 @@ const TodoList = () => {
         </div>
       ) : filteredTodos.length === 0 ? (
         <div className="empty-state">
-          <span className="empty-icon" aria-hidden="true">
-            🗂
-          </span>
+          
           <p>
             {searchQuery
               ? "No tasks match your search."
