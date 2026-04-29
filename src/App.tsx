@@ -1,9 +1,9 @@
-import React from 'react';
-
-export default function App() {
+import MainLayout from "./layouts/MainLayout";
+const App = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <MainLayout>
+      <></>
+    </MainLayout>
+  );
+};
+export default App;
